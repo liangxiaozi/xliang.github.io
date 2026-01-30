@@ -206,3 +206,19 @@ h4{
   scroll-margin-top: 92px !important;
 }
 
+/* ===== FORCE contact to be 2 lines (paste at END) ===== */
+.header .contact{
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+  flex-wrap: nowrap !important;
+}
+
+.header .contact .sep{
+  display: none !important;
+}
+
+/* 防止电话号码在中间断开（尤其是 +86 和号码分两行） */
+.header .contact span{
+  white-space: nowrap !important;
+}
