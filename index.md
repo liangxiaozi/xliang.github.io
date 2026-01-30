@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Xiao Liang | CV
-description: Xiao Liang - International Cooperation | Policy Research | AI Governance
+description: Xiao Liang - International Cooperation | Policy Research | AI Governance | AI Industry Acceleration
 ---
 
 <section id="profile" class="card">
