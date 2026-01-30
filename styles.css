@@ -7,7 +7,7 @@
   --link:#7ab7ff;
 }
 
-*{ box-sizing:border-box }
+*{ box-sizing:border-box; }
 
 html,body{
   margin:0;
@@ -22,103 +22,103 @@ body{
   line-height:1.6;
 }
 
-/* ================= Layout ================= */
+a{ color:var(--link); }
+
 .container{
   max-width:980px;
   margin:0 auto;
   padding:24px;
 }
 
-/* ================= Header ================= */
-.header{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap:32px;
-  border-bottom:1px solid var(--line);
-  padding-bottom:18px;
+/* ================= Top Navigation ================= */
+.top-nav{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: linear-gradient(180deg, #070b10, rgba(7,11,16,.88));
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(6px);
 }
 
-/* 左侧信息区，允许伸缩但不被挤爆 */
-.header > div{
-  flex:1 1 auto;
-  min-width:0;
+.nav-inner{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:14px;
+  padding:14px 24px;
+}
+
+.top-nav a{
+  color: var(--muted);
+  text-decoration:none;
+  font-size:14px;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid transparent;
+  white-space:nowrap;
+  line-height:1;
+}
+
+.top-nav a:hover{
+  color: var(--text);
+  border-color: var(--line);
+  background: rgba(255,255,255,.04);
+}
+
+.top-nav .nav-cta{
+  color: var(--text);
+  font-weight:700;
+  padding:8px 14px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.10);
+}
+
+.top-nav .nav-cta:hover{
+  background: rgba(255,255,255,.14);
+}
+
+/* ================= Header ================= */
+.header{
+  padding-top:22px;
+  padding-bottom:18px;
+  border-bottom:1px solid var(--line);
 }
 
 h1{
   margin:0;
-  font-size:34px;
+  font-size:40px;
   letter-spacing:.2px;
 }
 
-/* subtitle：桌面端永远一行 */
+/* subtitle: ALWAYS one line on desktop */
 .subtitle{
-  margin:8px 0 12px;
+  margin:10px 0 14px;
   color:var(--muted);
+  font-size:18px;
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
-  font-size:17px;
 }
 
-/* 联系方式：强制两行 */
+/* contact: email + phone each in its own row */
 .contact{
   margin:0;
   color:var(--muted);
   display:flex;
   flex-direction:column;
-  gap:6px;
+  gap:8px;
 }
 
 .contact span{
   white-space:nowrap;
 }
 
-.sep{
-  display:none;
-}
-
-/* ================= Navigation ================= */
-.nav{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  flex:0 0 auto;
-  white-space:nowrap;
-}
-
-.nav a{
-  color:var(--muted);
-  text-decoration:none;
-  padding:8px 12px;
-  border-radius:999px;
-  border:1px solid transparent;
-  line-height:1;
-  font-size:14px;
-}
-
-.nav a:hover{
-  color:var(--text);
-  border-color:var(--line);
-  background:rgba(255,255,255,.04);
-}
-
-/* Download PDF CTA */
-.nav .nav-cta{
-  color:var(--text);
-  border-color:var(--line);
-  background:rgba(255,255,255,.10);
-  font-weight:700;
-}
-
-.nav .nav-cta:hover{
-  background:rgba(255,255,255,.14);
-}
-
-/* ================= Links ================= */
-a{ color:var(--link) }
-
-/* ================= Section Cards ================= */
+/* ================= Section Cards (for Markdown) ================= */
+/*
+  IMPORTANT:
+  Your index.md should wrap each module like:
+  <div class="section" id="profile"> ...markdown... </div>
+*/
 .section{
   background:rgba(15,22,32,.85);
   border:1px solid var(--line);
@@ -128,7 +128,6 @@ a{ color:var(--link) }
   box-shadow:0 12px 32px rgba(0,0,0,.28);
 }
 
-/* section titles (## in markdown) */
 .section > h2{
   margin:0 0 14px;
   font-size:20px;
@@ -136,30 +135,26 @@ a{ color:var(--link) }
   scroll-margin-top:96px;
 }
 
-/* subsection titles (### in markdown) */
 .section > h3{
   margin:18px 0 6px;
   font-size:16px;
 }
 
-/* meta line (dates) */
 .meta{
   display:block;
   color:var(--muted);
   font-size:13px;
-  margin-bottom:8px;
+  margin:0 0 10px;
 }
 
 .muted{
   color:var(--muted);
 }
 
-/* paragraphs */
 .section p{
   margin:10px 0;
 }
 
-/* lists */
 .section ul{
   margin:10px 0 0 20px;
 }
@@ -168,7 +163,7 @@ a{ color:var(--link) }
   margin:6px 0;
 }
 
-/* ================= Skills grid (optional) ================= */
+/* optional grid if you use <div class="grid"> in markdown */
 .grid{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -187,3 +182,5 @@ h4{
   color:var(--muted);
   font-size:13px;
 }
+
+/* NOTE: you said mobile doesn’t matter, so no responsive tweaks here */
