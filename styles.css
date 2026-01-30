@@ -170,3 +170,17 @@ h4{
   }
   .grid{
     grid-template-colu
+
+/* Markdown-friendly typography inside .card */
+.card h2{ margin:0 0 10px; }
+.card h3{
+  margin:14px 0 6px;
+  font-size:15.5px;
+}
+.card .meta{
+  display:inline-block;
+  margin:0 0 8px;
+}
+.card ul{
+  margin:8px 0 0 18px;
+}
