@@ -19,9 +19,10 @@ body{
                "Apple Color Emoji","Segoe UI Emoji";
   background:linear-gradient(180deg, #070b10, var(--bg));
   color:var(--text);
-  line-height:1.55;
+  line-height:1.6;
 }
 
+/* ================= Layout ================= */
 .container{
   max-width:980px;
   margin:0 auto;
@@ -31,14 +32,16 @@ body{
 /* ================= Header ================= */
 .header{
   display:flex;
-  gap:24px;
   align-items:flex-start;
   justify-content:space-between;
+  gap:32px;
   border-bottom:1px solid var(--line);
   padding-bottom:18px;
 }
 
+/* 左侧信息区，允许伸缩但不被挤爆 */
 .header > div{
+  flex:1 1 auto;
   min-width:0;
 }
 
@@ -48,41 +51,50 @@ h1{
   letter-spacing:.2px;
 }
 
+/* subtitle：桌面端永远一行 */
 .subtitle{
-  margin:6px 0 10px;
+  margin:8px 0 12px;
   color:var(--muted);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  font-size:17px;
 }
 
+/* 联系方式：强制两行 */
 .contact{
-  margin: 0;
-  color: var(--muted);
-  display: flex;
-  flex-direction: column;   /* 关键：纵向排列 */
-  gap: 4px;
+  margin:0;
+  color:var(--muted);
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.contact span{
+  white-space:nowrap;
 }
 
 .sep{
-  display: none;
+  display:none;
 }
 
 /* ================= Navigation ================= */
 .nav{
   display:flex;
-  gap:10px;
   align-items:center;
-  justify-content:flex-end;
-  flex-wrap:nowrap;
-  flex-shrink:0;
+  gap:10px;
+  flex:0 0 auto;
+  white-space:nowrap;
 }
 
 .nav a{
   color:var(--muted);
   text-decoration:none;
-  padding:8px 10px;
+  padding:8px 12px;
   border-radius:999px;
   border:1px solid transparent;
   line-height:1;
-  white-space:nowrap;
+  font-size:14px;
 }
 
 .nav a:hover{
@@ -91,6 +103,7 @@ h1{
   background:rgba(255,255,255,.04);
 }
 
+/* Download PDF CTA */
 .nav .nav-cta{
   color:var(--text);
   border-color:var(--line);
@@ -102,66 +115,64 @@ h1{
   background:rgba(255,255,255,.14);
 }
 
-/* ================= General ================= */
+/* ================= Links ================= */
 a{ color:var(--link) }
 
-.muted{ color:var(--muted) }
-
-.meta{
-  color:var(--muted);
-  font-size:13px;
-}
-
-/* ================= Section Cards (Markdown-friendly) ================= */
-/* 你现在的 index.md 用的是 <div class="section" id="..."> 包裹每个模块 */
+/* ================= Section Cards ================= */
 .section{
   background:rgba(15,22,32,.85);
   border:1px solid var(--line);
-  border-radius:14px;
-  padding:18px;
-  margin:18px 0;
-  box-shadow:0 10px 30px rgba(0,0,0,.25);
+  border-radius:16px;
+  padding:22px;
+  margin:22px 0;
+  box-shadow:0 12px 32px rgba(0,0,0,.28);
 }
 
-/* section title */
+/* section titles (## in markdown) */
 .section > h2{
-  margin:0 0 10px;
-  font-size:18px;
+  margin:0 0 14px;
+  font-size:20px;
   letter-spacing:.3px;
-  scroll-margin-top:92px; /* 配合顶部导航跳转不被遮挡 */
+  scroll-margin-top:96px;
 }
 
-/* subheadings (roles/schools) */
+/* subsection titles (### in markdown) */
 .section > h3{
-  margin:16px 0 6px;
-  font-size:15.5px;
+  margin:18px 0 6px;
+  font-size:16px;
 }
 
-/* make the date line look like a meta line */
-.section .meta{
-  display:inline-block;
-  margin:0 0 8px;
+/* meta line (dates) */
+.meta{
+  display:block;
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:8px;
+}
+
+.muted{
+  color:var(--muted);
+}
+
+/* paragraphs */
+.section p{
+  margin:10px 0;
 }
 
 /* lists */
 .section ul{
-  margin:8px 0 0 18px;
+  margin:10px 0 0 20px;
 }
 
 .section li{
   margin:6px 0;
 }
 
-/* optional: make paragraphs inside card breathe */
-.section p{
-  margin:10px 0;
-}
-
-/* Skills grid (你如果后面想恢复两列，可以在 md 里继续用 <div class="grid">...) */
+/* ================= Skills grid (optional) ================= */
 .grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:12px;
+  gap:14px;
 }
 
 h4{
@@ -171,54 +182,8 @@ h4{
 
 /* ================= Footer ================= */
 .footer{
-  margin:24px 0 30px;
+  margin:28px 0 32px;
   text-align:center;
-}
-
-/* ================= Mobile ================= */
-@media (max-width: 760px){
-  .header{
-    flex-direction:column;
-  }
-  .nav{
-    justify-content:flex-start;
-    flex-wrap:wrap;
-  }
-  .grid{
-    grid-template-columns:1fr;
-  }
-}
-
-/* ===== FORCE section cards (paste at END of styles.css) ===== */
-.section{
-  background: rgba(15,22,32,.85) !important;
-  border: 1px solid var(--line) !important;
-  border-radius: 14px !important;
-  padding: 18px !important;
-  margin: 18px 0 !important;
-  box-shadow: 0 10px 30px rgba(0,0,0,.25) !important;
-}
-
-.section > h2{
-  margin: 0 0 10px !important;
-  font-size: 18px !important;
-  letter-spacing: .3px !important;
-  scroll-margin-top: 92px !important;
-}
-
-/* ===== FORCE contact to be 2 lines (paste at END) ===== */
-.header .contact{
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 6px !important;
-  flex-wrap: nowrap !important;
-}
-
-.header .contact .sep{
-  display: none !important;
-}
-
-/* 防止电话号码在中间断开（尤其是 +86 和号码分两行） */
-.header .contact span{
-  white-space: nowrap !important;
+  color:var(--muted);
+  font-size:13px;
 }
