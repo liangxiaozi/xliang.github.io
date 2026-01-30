@@ -4,7 +4,7 @@ title: Xiao Liang | CV
 description: Xiao Liang - International Cooperation | Policy Research | AI Governance
 ---
 
-<div class="section" id="profile">
+<div class="section" id="profile" markdown="1">
 
 ## Profile
 
