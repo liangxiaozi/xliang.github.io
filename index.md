@@ -35,7 +35,16 @@ policy research and knowledge products, and the design/operation of internationa
 - **Project Management:** Managed projects end-to-end including stakeholder engagement, TOR negotiation, needs assessment, scheduling, and final delivery.
 - **International Consumption Center Research:** Reviewed 50+ sources; built a 4-dimension, 22-indicator framework and a multi-source city database (2021–2025).
 
-### Specialist for Youth-Responsive Security Sector Reform · UN Department of Peace Operations  
+<div class="item-head-row">
+
+<h3>Specialist for Youth-Responsive Security Sector Reform · UN Department of Peace Operations</h3>
+
+<img src="/assets/images/un-dpo.svg"
+     alt="UN Department of Peace Operations"
+     class="item-logo">
+
+</div>
+
 <span class="meta">2022.12 – 2023.06</span>
 
 - Supported YRSSR agenda through policy research, database management, and secretariat support.
